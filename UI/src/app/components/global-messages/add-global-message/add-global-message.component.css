@@ -1,0 +1,11 @@
+:host{
+    margin: 0.8rem;
+}
+
+.btn-my-rounded{
+    border-radius: 50%;    
+}
+
+.btn-my-rounded__icon{
+    font-size: 1.5em;
+}

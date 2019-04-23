@@ -1,0 +1,4 @@
+<div class="writter">
+    <textarea #message class="writter__text-input" (keyup)="handleKeydown($event, message)"></textarea>
+    <input type="button" value="Send" (click)="sendMessage(message)"/>
+</div>

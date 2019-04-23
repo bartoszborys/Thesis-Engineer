@@ -1,0 +1,28 @@
+:host{
+    display: inline-block;
+}
+
+.flex-row-center{
+    display: flex;
+    justify-content: center;
+}
+
+.grade{
+    display: flex;
+    flex-direction: column;
+    padding: 0.3em;
+}
+
+.grade__header{
+    display: flex;
+    justify-content: center;
+}
+
+.grade__value{
+    display: flex;
+    justify-content: center;
+}
+
+.bold{
+    font-weight: bold;
+}

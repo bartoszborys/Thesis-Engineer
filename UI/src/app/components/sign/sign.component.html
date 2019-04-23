@@ -1,0 +1,16 @@
+<div class="formCardWrapper formCardWrapper--signIn" [ngClass]="loginClasses">
+  <div class="formCardWrapper__positionWrapper">
+    <app-login 
+      class="loginDecorator" 
+      (changeForm)="changeFormHandler($event)"
+    ></app-login>
+  </div>
+</div>
+<div class="formCardWrapper formCardWrapper--signUp" [ngClass]="registrationClasses">
+  <div class="formCardWrapper__positionWrapper">
+    <app-registration 
+      class="registrationDecorator" 
+      (changeForm)="changeFormHandler($event)"
+    ></app-registration>
+  </div>
+</div>

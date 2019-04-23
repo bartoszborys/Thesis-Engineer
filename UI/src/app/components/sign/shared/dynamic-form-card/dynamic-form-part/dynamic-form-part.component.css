@@ -1,0 +1,42 @@
+.form-input{
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.form-input__text{
+    padding: 3px;
+    width: 100%;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: black;
+    font-size: 1rem;
+    transition: border-color 0.2s, font-size 0.3s;
+}
+
+.form-input__text:hover{
+    border-color: #17a2b8;
+}
+
+.form-input__text:focus{
+    padding: 5px;
+    font-size: 1.2rem;
+    border-bottom-width: 2px;
+    border-color: #17a2b8;
+}
+
+.form-input__text--error{
+    border-color: red;
+}
+
+.form-input__validation-message{
+    opacity: 0;
+    font-weight: bold;
+    color: red;
+    font-size: 0.8em;
+    transition: opacity 0.2s linear;
+}
+
+.form-input__validation-message--visible{
+    opacity: 1;
+}

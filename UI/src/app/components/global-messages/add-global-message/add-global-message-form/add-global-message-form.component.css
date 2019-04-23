@@ -1,0 +1,10 @@
+.addGlobalMessageForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.addGlobalMessageForm__buttons{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: right;
+}

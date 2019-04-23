@@ -1,0 +1,34 @@
+<div class="globalMessages">
+    <div *ngFor="let globalMessage of globalMessages"
+      [class]="getCorrectClass(globalMessage.typeId) + ' card card--colorable-border mb-3 fadeIn globalMessages__card'"
+    >
+    <div class="globalMessages__cardHeader card-header card--colorable-bg text-white">
+      <h4>{{globalMessage.header}}</h4>
+      <div *ngIf="promoter" class="globalMessages__buttonsContainer">
+        <button 
+          tooltip="Edytuj wiadomość" 
+          placement="top" 
+          type="button" 
+          class="btn btn-outline-light globalMessages__button" 
+          (click)="editMessage(globalMessage);"
+          data-toggle="modal" 
+          data-target="#exampleModalLong"
+        >
+          <fa-icon class="globalMessages__buttonIcon" [icon]="editMessageIcon"></fa-icon>
+        </button>
+        <button 
+          tooltip="Usuń wiadomość"
+          placement="top"
+          type="button"
+          class="btn btn-outline-light globalMessages__button"
+          (click)="deleteMessage(globalMessage)"
+        >
+          <fa-icon class="globalMessages__buttonIcon" [icon]="removeMessageIcon"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="card-body text-secondary">
+      <p class="card-text">{{globalMessage.message}}</p>
+    </div>
+  </div>
+</div>

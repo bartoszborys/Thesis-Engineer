@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="header__details-wrapper header__same-space">
+        <span>{{selectedPersonData.name}}</span>
+        <span>{{selectedPersonData.status}}</span>
+    </div>
+    <div class="header__engineering-work">
+        <span style="text-align: center; font-weight: bold;">Praca</span>
+        <span style="font-style: italic;">{{selectedPersonData.engineerWork || "Brak tematu"}}</span>
+    </div>
+    <div class="header__details-options header__same-space">
+        <div class="dropdown dropdown--own-padding">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Akcje
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" routerLink="/messages">Praca</a>
+                <a class="dropdown-item" routerLink="/messages">Ocena</a>
+                <a class="dropdown-item" routerLink="/messages">Blokuj</a>
+            </div>
+        </div>
+    </div>
+</div>

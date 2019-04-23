@@ -1,0 +1,15 @@
+<div style="display: flex; flex-direction: column;" [formGroup]="gradesForm">
+  <span class="bold">Ocena pracy:</span>
+  <select formControlName="thesis">
+    <option *ngFor="let possibleGrade of possibleGrades" [value]="possibleGrade">{{possibleGrade == 0 ? '-' : possibleGrade}}</option>
+  </select>
+  <span class="bold">Ocena Studiów:</span>
+  <select formControlName="study">
+    <option *ngFor="let possibleGrade of possibleGrades" [value]="possibleGrade">{{possibleGrade == 0 ? '-' : possibleGrade}}</option>
+  </select>
+  <span class="bold">Ocena Obrony:</span>
+  <select formControlName="defense">
+    <option *ngFor="let possibleGrade of possibleGrades" [value]="possibleGrade">{{possibleGrade == 0 ? '-' : possibleGrade}}</option>
+  </select>
+  <input class="btn btn-primary" type="button" (click)="saveTrigger()" value="Zapisz">
+</div>

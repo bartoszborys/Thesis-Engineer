@@ -1,0 +1,3 @@
+<app-chat-messages-header [selectedPersonData]="lastClicked"></app-chat-messages-header>
+<app-chat-messages [texts]="texts"></app-chat-messages>   
+<app-chat-messages-text-write (message)="handleMessage($event)"></app-chat-messages-text-write>

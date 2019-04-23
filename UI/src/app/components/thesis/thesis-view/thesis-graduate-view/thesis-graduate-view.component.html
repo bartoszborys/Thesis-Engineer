@@ -1,0 +1,46 @@
+<div class="card card-width card-margin">
+  <div class="card-body">
+    <div *ngIf="details==null">
+      <span class="bold">Rozpocznij swoją prace dyplomową</span>
+      <button (click)="createYourThesis()">Rozpocznij</button>
+    </div>
+    <div *ngIf="details!=null">
+      <div class="flex-col">
+        <div class="flex-row">
+          <div class="flex-col flex-same-width bordered-section">
+            <span class="bold">NAZWA PRACY:</span>
+            <span>{{details?.thesisName}}</span>
+            <span class="bold">STATUS PRACY:</span>
+            <span>{{details?.stateName}}</span>
+            <span class="bold">Data ostatniej akcji:</span>
+            <span>{{details?.lastActionDate | date: 'dd-MM-yyyy'}}</span>
+          </div>
+          <div class="flex-col flex-same-width flex-center bordered-section">
+            <app-thesis-grades [thesisDetails]="details"></app-thesis-grades>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-col flex-same-width bordered-section">
+            <span class="bold">Moja praca:</span>
+            <input type="file" (change)="loadFile($event)">
+            <span class="flex-row">
+              <button class="flex-same-width btn btn-primary btn-margin" (click)="sendThesis()">Wyślij</button>
+              <button class="flex-same-width btn btn-primary btn-margin" (click)="downloadFile('GRD')">Podejrzyj</button>
+            </span>
+          </div>
+          <div class="flex-col flex-same-width bordered-section">
+            <span class="bold">Plik promotora:</span>
+            <button class="btn btn-primary btn-margin flex-same-width" (click)="downloadFile('PRO')">Podejrzyj</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-col">
+  <span class="bold">Komentarze</span>
+  <div *ngFor="let comment of details?.comments">
+    <span>{{comment.date | date: 'HH:mm:ss dd-MM-yyyy'}}</span> - <span>{{comment.text}}</span>
+  </div>
+</div>
+<app-thesis-pdf-viewer [iframeUrl]="iframeUrl"></app-thesis-pdf-viewer>

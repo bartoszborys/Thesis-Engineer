@@ -1,0 +1,6 @@
+<div class="messages-wrapper">
+  <app-chat-person-container (lastClicked)="handleClickedPersonTile($event)"></app-chat-person-container>
+</div>
+<div *ngIf="lastClickedPersonTileData" class="messages-wrapper__data">
+  <app-chat-messages-container [lastClicked]="lastClickedPersonTileData"></app-chat-messages-container>
+</div>

@@ -1,0 +1,24 @@
+:host{
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.window{
+    margin: auto;
+}
+
+.window__fadeIn{
+    animation-name: window__fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes window__fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

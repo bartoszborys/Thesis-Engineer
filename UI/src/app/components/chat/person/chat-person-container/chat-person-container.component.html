@@ -1,0 +1,8 @@
+<app-chat-person-search (searchValue)="onSearchClick($event)"></app-chat-person-search>
+<div class="messages-wrapper__persons">
+  <app-chat-person-tile 
+    *ngFor="let personTileData of (filteredPersonsTileData != null) ? filteredPersonsTileData : personsTileData; let i = index" 
+    (click)="onChatTileClick(i)" 
+    [personData]="personTileData">
+  </app-chat-person-tile>
+</div>

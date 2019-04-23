@@ -1,0 +1,36 @@
+#main-navbar{
+    position: fixed;
+    width: 100%;
+    background-color: #263748; 
+    box-shadow: 0 0 3px 1px #263748;
+    transition: margin linear 0.3s;
+    z-index: 5;
+}
+
+.navbar-hidden{
+    margin-top: -63px;
+}
+
+.nav-button-non-fixed{
+    position: initial !important;
+    margin-top: initial !important;
+}
+
+.btn-my{
+    background-color: #263748;
+}
+
+.navbar-button{
+    position: fixed;
+    border-radius: 5px;
+    background-color: white;
+    border: solid 1px #263748;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    font-size: 10px;
+    color: #263748;
+    top: -1px;
+    left: 50%;
+    font-weight: bold;
+    z-index: 1;
+}

@@ -1,0 +1,3 @@
+<div *ngIf="iframeUrl" class="file" (click)="dismissWindow()">
+  <iframe class="file__iframe" [src]="iframeUrl | safe"></iframe>
+</div>

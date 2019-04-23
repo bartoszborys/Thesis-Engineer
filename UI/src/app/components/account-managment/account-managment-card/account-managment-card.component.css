@@ -1,0 +1,49 @@
+:host{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card--my{
+    min-width: 16rem;
+    box-shadow: 0 0 15px 3px #1f1f1f;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 0px;
+    margin-left: 1rem;
+    overflow: hidden;
+}
+
+.card__image--my{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0 0 18px 4px #000000;
+}
+
+.btn--my{
+    margin-left: 2px;
+}
+
+.card__image-wrapper{
+    width: 100%;
+    background-color: #062a52;
+}
+
+.card__buttons{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.card__state{
+    font-style: italic;
+    text-align: center;
+}
+
+.card__own-icon{
+    color: whitesmoke;
+}

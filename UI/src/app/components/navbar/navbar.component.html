@@ -1,0 +1,32 @@
+<nav id="main-navbar" [ngClass]="currentClasses" class="navbar navbar-expand-lg navbar-dark" (mouseover)="mouse(false)" (mouseout)="mouse(true)">
+  <div class="navbar-brand" style="cursor: pointer;">P-G</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main">Aktualności</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/thesis">Prace</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/messages" routerLinkActive="active">Wiadomości</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/account">Konto</a>
+      </li>
+      <li style="flex: 1;">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active">
+          <label for="fixCheckbox">Always Visible: {{nonFixed ? "On" : "Off"}}</label>
+          <input id="fixCheckbox" [hidden]="true" #fixCheckbox type="checkbox" (change)="nonFixed = fixCheckbox.checked;setCurrentClasses()">
+        </a>
+        </li>
+    </ul>
+  </div>
+  <input type="button" class="btn btn-outline-light form-inline" value="Logout" (click)="logout()"/>
+  <input type="button" *ngIf="navbarHidden && !nonFixed" value="Show navbar" class="navbar-button"/>
+</nav>

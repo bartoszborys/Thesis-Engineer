@@ -1,0 +1,31 @@
+:host{
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+.graduatesTable{
+    flex: 1;
+    overflow: auto;
+}
+
+.graduatesTable__row{
+    color: black;
+}
+
+.graduatesTable__row--colorable{
+    cursor: pointer;
+}
+
+.graduatesTable__row--colorable:hover{
+    animation: colorchange 0.3s linear forwards;
+}
+
+@keyframes colorchange{
+    0%   {
+    }
+    100% {
+        color: #0053fd;
+        background: #bee5eb;
+    }
+}

@@ -1,0 +1,35 @@
+:host{
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 600px) {
+    :host{
+        height: 50px!important;
+    }
+}
+
+.header{
+    display: flex;
+}
+
+.header__same-space{
+    flex: 1;
+}
+
+.header__details-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.header__details-options{
+    text-align: right;
+}
+
+.header__engineering-work{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown--own-padding{
+    padding: 5px;
+}

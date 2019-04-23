@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './animations.css';
+
+.fadeIn{
+    animation-name: fadeInAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.flex-end{
+    display: flex;
+    justify-content: end;
+}
+
+.flex-same-width{
+    flex: 1;
+}

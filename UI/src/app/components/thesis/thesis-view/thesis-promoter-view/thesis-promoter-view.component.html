@@ -1,0 +1,58 @@
+<div class="card card-width card-margin">
+  <div class="card-header">
+    <h5 class="bold">{{details?.thesisName}}</h5>
+  </div>
+  <div class="card-body">
+    <div class="flex-col">
+      <div class="flex-row">
+        <div class="flex-col flex-same-width bordered-section">
+          <div class="flex-col">
+            <span class="bold flex-center">Status</span>
+            <span class="flex-center">{{details?.stateName}}</span>
+          </div>
+          <div class="flex-col">
+            <span class="bold flex-center">Data ostatniej akcji</span>
+            <span class="flex-center">{{details?.lastActionDate | date: 'dd-MM-yyyy'}}</span>
+          </div>
+          <div class="flex-col">
+            <span class="bold flex-center">Praca studenta</span>
+            <button class="btn btn-primary" (click)="downloadFile('GRD')">Podejrzyj</button>
+          </div>
+        </div>
+        <div class="flex-col flex-same-width bordered-section">
+          <div *ngIf="!editGrades" class="flex-col flex-same-width flex-end">
+            <app-thesis-grades [thesisDetails]="details"></app-thesis-grades>
+            <input class="btn btn-primary" type="button" (click)="editGrade()" value="Edytuj">
+          </div>
+          <div *ngIf="editGrades" class="flex-col">
+            <app-thesis-change-grade [thesisDetails]="details" (triggerSave)="changeGrades($event)"></app-thesis-change-grade>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="bordered-section flex-col" style="flex: 2;">
+          <span class="flex-col">
+            <span class="bold flex-center">Mój plik</span>
+            <input type="file" (change)="loadFile($event)" style="overflow: hidden; width: 100%;">
+          </span>
+          <span class="flex-row">
+            <button class="flex-same-width btn btn-primary btn-margin" (click)="sendThesis()">Wyślij</button>
+            <button class="flex-same-width btn btn-primary btn-margin" (click)="downloadFile('PRO')">Podejrzyj</button>
+          </span>
+        </div>
+        <div class="flex-col" style="flex: 1;">
+          <input class="flex-same-width bordered-section btn btn-danger" type="button" value="Odrzuć" (click)="changeState('REJ')"/>
+          <input class="flex-same-width bordered-section btn btn-success" type="button" value="Zaakceptuj" (click)="changeState('ACC')"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-col">
+  <app-thesis-add-comment (newComment)="addNewComment($event)"></app-thesis-add-comment>
+  <span class="bold">Komentarze</span>
+  <div *ngFor="let comment of details?.comments">
+    <span>{{comment.date | date: 'HH:mm:ss dd-MM-yyyy'}}</span> - <span>{{comment.text}}</span>
+  </div>
+</div>
+<app-thesis-pdf-viewer [iframeUrl]="iframeUrl"></app-thesis-pdf-viewer>

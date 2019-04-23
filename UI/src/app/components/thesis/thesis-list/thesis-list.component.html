@@ -1,0 +1,26 @@
+<div class="card-header bg-secondary text-white">
+  <h4>Filtry</h4>
+</div>
+<div class="graduatesTable">
+  <table class="table" style="margin: 0">  
+    <tbody>
+      <tr (click)="openThesis(graduates.indexOf(graduate))" class="graduatesTable__row graduatesTable__row--colorable" *ngFor="let graduate of graduates">
+        <th>
+          <span tooltip="L.P." show-delay="0" hide-delay="0">{{graduates.indexOf(graduate) + 1}}</span>
+        </th>
+        <td>
+          <span tooltip="Imię i Nazwisko" show-delay="0" hide-delay="0">{{graduate.userName}}</span>
+        </td>
+        <td>
+          <span tooltip="Stan Pracy" show-delay="0" hide-delay="0">{{graduate.stateName}}</span>
+        </td>
+        <td>
+          <span tooltip="Ocena" show-delay="0" hide-delay="0">{{graduate.finallyGrade | grade}}</span>
+        </td>
+        <td>
+          <span tooltip="Data ostatniej akcji" show-delay="0" hide-delay="0">{{graduate.lastActionDate | date: 'dd-MM-yyyy'}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

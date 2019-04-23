@@ -1,0 +1,16 @@
+<div [formGroup]="form" [ngSwitch]="element.controlType">
+  <input
+    *ngSwitchCase="'text'"
+    [type]="element.type"
+    [formControlName]="element.key" 
+    class="form-input form-input__text"
+    [class.form-input__text--error]='form.hasError(element.key) && (form.get(element.key).touched || form.get(element.key).dirty)'
+    [placeholder]="element.label"
+  >
+  <div 
+    class="form-input__validation-message"
+    [class.form-input__validation-message--visible]='form.hasError(element.key) && (form.get(element.key).touched || form.get(element.key).dirty)'
+  >
+    {{element.invalidMessage}}
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="flex-row-center">
+    <div class="grade">
+        <span class="grade__header bold">Końcowa</span>
+        <span class="grade__value">{{finallyGrade() | grade}}</span>
+    </div>
+    <div class="grade">
+        <span class="grade__header bold">Średnia</span>
+        <span class="grade__value">{{averageGrade() | grade}}</span>
+    </div>
+</div>
+<div class="flex-row-center">
+    <div class="grade">
+        <span class="grade__header bold">Pracy</span>
+        <span class="grade__value">{{thesisDetails?.thesisGrade | grade}}</span>
+    </div>
+    <div class="grade">
+        <span class="grade__header bold">Studiów</span>
+        <span class="grade__value">{{thesisDetails?.studyGrade | grade}}</span>
+    </div>
+    <div class="grade">
+        <span class="grade__header bold">Obrony</span>
+        <span class="grade__value">{{thesisDetails?.defenseGrade | grade}}</span>
+    </div>
+</div>

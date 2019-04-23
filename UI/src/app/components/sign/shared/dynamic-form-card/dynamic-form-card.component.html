@@ -1,0 +1,42 @@
+<div class="main-form">
+  <div class="main-form__content-block main-form__content-block--header">
+    <h3>{{cardDetails.mainMessage}}</h3>
+    <span>{{cardDetails.information}}</span>
+  </div>
+  <div class="main-form__content-block">
+    <app-dynamic-form-part 
+      *ngFor="let loginFormElement of cardDetails.loginFormElements" 
+      class="main-form__input"
+      [element]="loginFormElement" 
+      [form]="form"
+    >
+    </app-dynamic-form-part>
+    <input 
+      class="main-form__input btn btn-outline-secondary" 
+      type="button" 
+      [value]="cardDetails.buttonValue" 
+      [disabled]="!form.valid || cardDetails.isLoading"
+      (click)="submitForm()"
+    />
+    <div *ngIf="cardDetails.isLoading" class="animated-loading">
+        <span *ngFor="let dot of [1,2,3,4,5]" class="animated-loading__dot">⬤</span>
+    </div>
+    <input 
+      *ngIf="cardDetails.resetButton" 
+      class="main-form__input btn btn-outline-secondary" 
+      type="button" 
+      value="Reset" 
+      (click)="form.reset();"
+    />
+    <div class="main-form__links">
+      <span *ngFor="let link of cardDetails.links">
+        <span class="main-form__link" (click)="propagateClick(link.route)">
+          {{link.value}}
+        </span>
+      </span>
+    </div>
+    <span class="main-form__content-error-message">{{cardDetails.serverAlertMessage}}</span>
+  </div>
+  <div class="main-form__content-block main-form__content-block--footer">
+  </div>
+</div>

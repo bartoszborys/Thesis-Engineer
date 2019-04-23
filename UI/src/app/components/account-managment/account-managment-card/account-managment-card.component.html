@@ -1,0 +1,29 @@
+<div class="card card--my">
+  <div class="card__image-wrapper">
+    <img 
+      class="card-img-top card__image--my"
+      [src]="newProfile || currentImage"
+    >
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{userDetails?.name}} {{userDetails?.lastName}}</h5>
+    <div class="card-text">{{promoter? 'Promotor' : 'Dyplomant'}}</div>
+    <div class="card__buttons">
+      <div class="btn-group" role="group">
+        <button 
+          *ngFor="let actionButton of actionButtons" 
+          type="button" 
+          class="btn btn-primary btn--my" 
+          (click)="changeState(actionButton.toState, actionButton.hoverText)" 
+          (mouseover)="changeButtonDescription(actionButton.hoverText)" 
+          (mouseout)="resetButtonDescription()"
+        >
+          <fa-icon class="card__own-icon" [icon]="actionButton.icon"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="card__state">
+      {{buttonsState}}
+    </div>
+  </div>
+</div>

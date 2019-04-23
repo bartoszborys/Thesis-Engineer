@@ -1,0 +1,9 @@
+<span>
+  <b>Nowy komentarz</b>
+</span>
+<div style="display: flex;">
+  <input #comment style="flex: 1;" type="text"/> 
+</div>
+<div style="display: flex; justify-content: flex-end;">
+  <button class="btn btn-primary" (click)="addComment(comment.value)">Dodaj</button>
+</div>

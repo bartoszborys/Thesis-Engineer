@@ -1,0 +1,21 @@
+<div [formGroup]="form" class="addGlobalMessageForm">
+  <div class="form-group">
+    <label>Rodzaj wiadomości</label>
+    <select class="form-control" formControlName="typeId">
+      <option *ngFor="let messagesType of messagesTypes" [value]="messagesType.id">{{messagesType.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Nagłówek</label>
+    <input class="form-control" formControlName="header"/>
+  </div>
+  <div class="form-group">
+    <label>Treść</label>
+    <textarea class="form-control" formControlName="message" rows="3"></textarea>
+  </div>
+  <div class="addGlobalMessageForm__buttons">
+    <button type="button" style="margin-right: 0.3rem;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button *ngIf="!editedDetails" type="button" class="btn btn-primary" (click)="send()" data-dismiss="modal">Send</button>
+    <button *ngIf="editedDetails" type="button" class="btn btn-primary" (click)="edit()" data-dismiss="modal">Edit</button>
+  </div>
+</div>

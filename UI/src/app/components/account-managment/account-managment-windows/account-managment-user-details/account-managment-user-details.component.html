@@ -1,0 +1,44 @@
+<div [formGroup]="form">
+  <h3>Dane Profilu</h3>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Imię</label>
+      <input type="text" class="form-control" formControlName="name" id="name" placeholder="Imię">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName">Nazwisko</label>
+      <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Nazwisko">
+    </div>
+  </div>
+  <div class="form-row" *ngIf="!promoter">
+    <div class="form-group col-md-6">
+      <label for="studyField">Kierunek</label>
+      <select id="studyField" class="form-control" formControlName="studyFieldId">
+        <option *ngFor="let studyField of studyFields" value="{{studyField.id}}">{{studyField.name}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="promotor">Promotor</label>
+      <select id="promotor" class="form-control" formControlName="promoterId">
+        <option *ngFor="let promoter of promoters" value="{{promoter.id}}">{{promoter.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row" *ngIf="!promoter">
+    <div class="form-group col -md-12">
+      <label for="workName">Praca Dyplomowa</label>
+      <input type="text" class="form-control" formControlName="engineerWork" id="workName" placeholder="Nazwa pracy dyplomowej">
+    </div>
+  </div>
+  <div class="form-row">
+    <input type="button" class="btn btn-outline-primary btn--my" (click)="rewriteData()" value="Reset"/>
+    <input type="button" class="btn btn-outline-primary btn--my" (click)="submit()" value="Submit"/>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <h3>Zdjęcie Profilu</h3>
+      <input type="file" class="form-control-file" id="image" placeholder="Zdjęcie" (change)="onFileChanged($event)">
+    </div>
+  </div>
+  <span style="color: red;">{{errorMessage}}</span>
+</div>

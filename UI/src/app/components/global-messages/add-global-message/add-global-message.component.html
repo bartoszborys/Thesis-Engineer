@@ -1,0 +1,23 @@
+<button 
+  tooltip="Send global message" 
+  placement="right" 
+  type="button" 
+  class="btn btn-outline-light btn-my-rounded"
+  data-toggle="modal" 
+  (click)="form.cleanUp()"
+  data-target="#exampleModalLong"
+>
+  <fa-icon class="btn-my-rounded__icon" [icon]="buttonIcon"></fa-icon>
+</button>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalCenterTitle" class="modal-title">Komunikat</h5>
+      </div>
+      <div class="modal-body">
+        <app-add-global-message-form #form></app-add-global-message-form>
+      </div>
+    </div>
+  </div>
+</div>

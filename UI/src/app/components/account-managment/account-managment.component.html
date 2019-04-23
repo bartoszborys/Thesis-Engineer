@@ -1,0 +1,11 @@
+<app-account-managment-card (windowState)="changeWindowState($event)" [newProfile]="newProfileImage"></app-account-managment-card>
+<div *ngIf="windowState!=windowStateTypes.EMPTY" class="card window window__fadeIn" [ngSwitch]="windowState">
+  <div class="card-header text-center">
+    <h2>{{windowHeader}}</h2>
+  </div>
+  <div class="card-body">
+    <app-account-managment-thesis class="window__fadeIn" *ngSwitchCase="windowStateTypes.THESIS"></app-account-managment-thesis>
+    <app-account-managment-change-password class="window__fadeIn" *ngSwitchCase="windowStateTypes.PASSWORD"></app-account-managment-change-password>
+    <app-account-managment-user-details (file)="newProfile($event)" class="window__fadeIn" *ngSwitchCase="windowStateTypes.DETAILS"></app-account-managment-user-details>
+  </div>
+</div>

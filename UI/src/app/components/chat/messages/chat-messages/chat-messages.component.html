@@ -1,0 +1,11 @@
+<div #scrollContainer class="messages">
+  <div class="message-container" *ngFor="let text of texts;">
+    <div class="message-container__message message-container__message--other-message" *ngIf="!text.isMine">
+      <span class="message-container__text">{{text.message}}</span>
+    </div>
+    <div class="message-container__empty-space-filler"></div>
+    <div class="message-container__message message-container__message--my-message" *ngIf="text.isMine">
+      <span class="message-container__text">{{text.message}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="tile">
+  <span class="tile__image-container">
+    <img *ngIf="personData.imageUrl!='no-image'" class="tile__image" [src]="personData.imageUrl"/>
+    <canvas #paintArea *ngIf="personData.imageUrl=='no-image'" class="tile__image"></canvas>
+  </span>
+  <span class="tile__details-container">
+    <div class="tile__detail">
+      {{personData.name}}
+    </div>
+    <div class="tile__detail">
+      {{personData.status}}
+    </div>
+  </span>
+</div>
